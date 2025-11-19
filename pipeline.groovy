@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'slave'}
     stages {
         stage('pull-stage') {
             steps {
@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo " build sucess"
+                sh '/opt/maven/bin/mvn clean package'
             }
         }
         stage('test') {
