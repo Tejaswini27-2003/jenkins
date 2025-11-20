@@ -1,14 +1,14 @@
 pipeline {
-    agent any
+    agent {label 'slave'}
     stages {
         stage('pull-stage') {
             steps {
-                echo "pull stage"
+                git branch: 'main', url: 'https://github.com/Anilbamnote/student-ui-app.git'
             }
         }
         stage('Build') {
             steps {
-                echo "build stage"
+                sh '/opt/maven/bin/mvn clean package'
             }
         }
         stage('test') {
@@ -23,5 +23,3 @@ pipeline {
         }
     }
 }
-
-
