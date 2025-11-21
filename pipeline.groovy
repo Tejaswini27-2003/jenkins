@@ -13,7 +13,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo "test suecss"
+                sh '/opt/maven/bin/mvn sonar:sonar -Dsonar.projectKey=studentapp -Dsonar.host.url=http:// 3.26.54.234:9000  -Dsonar.login=51590797e14e0536d584661cedf809f92367e2e1'
             }
         }
         stage('deploy') {
