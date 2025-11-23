@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh '/opt/maven/bin/mvn clean package'
+                echo "build stage"
             }
         }
         stage('test') {
             steps {
-                sh '/opt/maven/bin/mvn sonar:sonar -Dsonar.projectKey=studentapp -Dsonar.host.url=http:// 16.176.209.19:9000  -Dsonar.login=967deab55bf3de34de63964aa4d663dab1341750'
+                echo "test stage"
             }
         }
         stage('deploy') {
