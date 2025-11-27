@@ -13,7 +13,10 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh '/opt/maven/bin/mvn sonar:sonar -Dsonar.projectKey=studentapp -Dsonar.host.url=http:// 3.26.54.234:9000  -Dsonar.login=51590797e14e0536d584661cedf809f92367e2e1'
+                sh '''/opt/maven/bin/mvn sonar:sonar \\
+                     -Dsonar.projectKey=project \\
+                     -Dsonar.host.url=http://52.64.132.144:9000 \\                                 
+                     -Dsonar.login=b487469ccc8ea28212fdabd6f652a2bc8c522735'''
             }
         }
         stage('deploy') {
