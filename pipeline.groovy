@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''/opt/maven/bin/mvn sonar:sonar \\
                      -Dsonar.projectKey=project \\
-                     -Dsonar.host.url=http://52.64.132.144:9000 \\                                 
+                     -Dsonar.host.url="http://52.64.132.144:9000" \\                                 
                      -Dsonar.login=b487469ccc8ea28212fdabd6f652a2bc8c522735'''
             }
         }
